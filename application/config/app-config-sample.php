@@ -69,3 +69,13 @@ define('AB_API_PASS', '');
 define('AB_API_HOST', '');
 
 define('AB_DATA', 'testapi'); // api (production), testapi (development)
+
+/**
+ * DigitalDelve XML webservice (download proof — do not commit real secrets)
+ */
+define('DD_API_URL', 'https://ddportal.filefindersonline.com/webservice/default.cfm');
+define('DD_API_USERNAME', '');
+define('DD_API_PASSWORD', '');
+define('DD_ACCOUNT_CODE', 'FFO'); // empty string = accept all AccountCodes from the credential
+define('DD_IMPORT_LIMIT', 3);
+define('DD_SSL_VERIFY', true); // set false on local Windows PHP without a CA bundle
