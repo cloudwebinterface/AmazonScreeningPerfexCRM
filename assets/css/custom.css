@@ -663,4 +663,56 @@ body.admin .nav-tabs > li.active > a {
     body.admin .content {
         padding: 16px !important;
     }
+
+    body.admin #header {
+        position: relative;
+    }
+
+    body.admin #logo {
+        display: none !important;
+    }
+
+    body.admin .small-logo {
+        display: flex !important;
+        float: none !important;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        pointer-events: auto;
+    }
+
+    body.admin .small-logo .text-primary,
+    body.admin .small-logo a.logo {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    body.admin .small-logo img {
+        display: block !important;
+        height: 34px !important;
+        width: auto !important;
+        margin: 0 auto !important;
+        filter: none !important;
+    }
+
+    body.login_admin .company-logo {
+        text-align: center !important;
+        display: flex !important;
+        justify-content: center !important;
+        width: 100%;
+    }
+
+    body.login_admin .company-logo a.logo {
+        margin: 0 auto;
+    }
 }
