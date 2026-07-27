@@ -11,21 +11,20 @@
   <?php echo app_compile_css('admin-auth'); ?>
   <style>
   body {
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #fff;
+    font-family: "DM Sans", "Segoe UI", system-ui, sans-serif;
     font-size: 13px;
-    color: #6a6c6f;
-    background: #444a52;
+    color: #0b1f33;
+    background: #0b1f33;
     margin: 0;
     padding: 0;
   }
 
   h1 {
-    font-weight: 400;
-    font-size: 24px;
-    margin-bottom: 35px;
-    text-transform: uppercase;
-    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 8px;
+    text-transform: none;
+    text-align: left;
   }
 
   .btn-primary {

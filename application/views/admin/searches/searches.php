@@ -10,11 +10,17 @@
                 <div class="panel_s">
                     <div class="panel-body">
                         <?php $this->load->helper('datatables_helper'); ?>
-                        <?php if ( isset($total_rows) && $total_rows > 0 ): ?>
-                            <div class="export-action">
-                                <a href="/admin/searches/export" class="btn btn-primary">Export to CSV</a>
+                        <div class="searches-page-header">
+                            <div>
+                                <h2 class="searches-page-title">Pending Searches</h2>
+                                <p class="searches-page-sub">Review, note, and submit screening cases</p>
                             </div>
-                        <?php endif; ?>
+                            <?php if ( isset($total_rows) && $total_rows > 0 ): ?>
+                                <div class="export-action">
+                                    <a href="/admin/searches/export" class="btn btn-primary">Export to CSV</a>
+                                </div>
+                            <?php endif; ?>
+                        </div>
 
                         <?php echo form_open('submit/search_form', array('id' => 'custom-search', 'method' => 'post')); ?>
                         <?php
@@ -178,6 +184,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+    $('.menu-item-searches').addClass('active');
 
     $('.search-filter select').on('change', function() {
         var sValue = $(this).val();
@@ -199,25 +206,27 @@ $(document).ready(function() {
             akas = '<h3>Aliases:</h3>'+d.aka_names;
         }
 
-        var publicView = '<div class="note-button-area">'+
+        var publicView = '<div class="child-row-card">'+
+        '<div class="note-button-area">'+
         '<button type="button" class="add-notes" data-sid="'+d.sid+'" data-row="'+d.row_id+'">Add notes</button>'+
         '<?php $form = form_open('admin/notes/add', array('class' => 'add_notes_form')); $modified_form = preg_replace('/\s+/', ' ', trim($form)); echo $modified_form; ?>'+
         '<div style="display:none"><input type="hidden" name="sid" value="'+d.sid+'"><input type="hidden" name="row" value="'+d.row_id+'"></div>'+
-        '<div class="inp-group"><textarea name="note"></textarea></div>'+
+        '<div class="inp-group"><textarea name="note" placeholder="Write an internal note..."></textarea></div>'+
         '<div class="inp-group"><button type="submit">Submit note</button><button type="button" class="cancel-note">Cancel</button></div>'+
         '<?php echo form_close(); ?>'+
         '</div>'+
         '<div class="aliases-area">'+akas+'</div>'+
         '<table cellspacing="0" border="0" class="datatable-inner-table note-content">'+
             '<tr>'+
-                '<td>Client notes:</td>'+
+                '<td>Client notes</td>'+
                 '<td>'+d.client_notes+'</td>'+
             '</tr>'+
             '<tr>'+
-                '<td>Internal notes:</td>'+
+                '<td>Internal notes</td>'+
                 '<td>'+d.internal_notes+'</td>'+
-            '</tr>'+ 
-        '</table>'; 
+            '</tr>'+
+        '</table>'+
+        '</div>';
 
         return publicView;
 
