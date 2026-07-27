@@ -1,0 +1,60 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Environment / secrets (use app-config-sample.php as template)
+.env
+.env.*
+application/config/app-config.php
+
+# Runtime logs
+log.txt
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
+# Application cache
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+
+# User uploads & generated media
+uploads/*
+!uploads/index.html
+!uploads/**/
+!uploads/**/.htaccess
+!uploads/**/index.html
+
+media/*
+!media/index.html
+
+assets/plugins/elFinder/files/*
+!assets/plugins/elFinder/files/.gitignore
+
+# Archives / backups
+*.zip
+*.tar
+*.tar.gz
+*.sql
+*.sql.gz
+*.bak
+
+# phpMyAdmin (local dev tool — security risk if deployed)
+pma/
+
+# Node / frontend build artifacts
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Composer (optional — uncomment if you install deps via `composer install`)
+# application/vendor/
+# modules/backup/vendor/

@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --as-font: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --as-bg: #f1f5f9;
+    --as-surface: #ffffff;
+    --as-sidebar: #0f172a;
+    --as-sidebar-text: #cbd5e1;
+    --as-sidebar-active: #1e293b;
+    --as-sidebar-accent: #3b82f6;
+    --as-header-bg: #ffffff;
+    --as-header-border: #e2e8f0;
+    --as-primary: #2563eb;
+    --as-primary-hover: #1d4ed8;
+    --as-success: #059669;
+    --as-success-hover: #047857;
+    --as-text: #0f172a;
+    --as-text-muted: #64748b;
+    --as-border: #e2e8f0;
+    --as-radius: 12px;
+    --as-radius-sm: 8px;
+    --as-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+    --as-shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+    --as-shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.06);
+}
+
+/* ── Base typography ─────────────────────────────────────────── */
+
+body.admin,
+body.app.admin {
+    font-family: var(--as-font) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--as-text);
+}
+
+body.admin h1,
+body.admin h2,
+body.admin h3,
+body.admin h4,
+body.admin h5,
+body.admin h6,
+body.admin .panel-title {
+    font-family: var(--as-font) !important;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+
+body.admin #header {
+    background: var(--as-header-bg) !important;
+    background-image: none !important;
+    filter: none !important;
+    height: 64px;
+    border-bottom: 1px solid var(--as-header-border);
+    box-shadow: var(--as-shadow);
+}
+
+body.admin #logo {
+    height: 64px;
+    padding: 12px 20px;
+}
+
+body.admin #logo span {
+    color: var(--as-text) !important;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+body.admin .navbar-nav > li > a {
+    color: var(--as-text-muted) !important;
+    line-height: 56px;
+    height: 64px;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+body.admin .navbar-nav > li > a:hover,
+body.admin .navbar-nav > li > a:focus {
+    color: var(--as-text) !important;
+    background: transparent !important;
+}
+
+body.admin #header li > a.active {
+    background: #eff6ff !important;
+    color: var(--as-primary) !important;
+    border-radius: var(--as-radius-sm);
+}
+
+body.admin #header .load-fresh-data {
+    padding: 14px 16px !important;
+}
+
+body.admin #header .load-fresh-data > a {
+    background: var(--as-success) !important;
+    border: none !important;
+    border-radius: var(--as-radius-sm) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    height: auto !important;
+    padding: 8px 16px !important;
+    box-shadow: var(--as-shadow);
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+body.admin #header .load-fresh-data > a:hover {
+    background: var(--as-success-hover) !important;
+    box-shadow: var(--as-shadow-md);
+}
+
+body.admin .header-user-profile .staff-profile-image-small {
+    border: 2px solid var(--as-border);
+    box-shadow: var(--as-shadow);
+}
+
+body.admin .dropdown-menu {
+    border: 1px solid var(--as-border) !important;
+    border-radius: var(--as-radius-sm) !important;
+    box-shadow: var(--as-shadow-lg) !important;
+    padding: 6px !important;
+}
+
+body.admin .dropdown-menu > li > a {
+    border-radius: 6px;
+    padding: 8px 12px !important;
+    font-size: 13px;
+}
+
+body.admin .dropdown-menu > li > a:hover {
+    background: #f8fafc !important;
+    color: var(--as-text) !important;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────── */
+
+body.admin #menu {
+    top: 64px;
+    width: 230px;
+}
+
+body.admin #side-menu {
+    background: var(--as-sidebar) !important;
+    padding: 12px 10px;
+}
+
+body.admin #side-menu li a {
+    color: var(--as-sidebar-text) !important;
+    text-transform: none !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    padding: 10px 14px !important;
+    border-radius: var(--as-radius-sm) !important;
+    margin-bottom: 2px;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+body.admin #side-menu li a i.menu-icon {
+    color: #94a3b8;
+    transition: color 0.15s ease;
+}
+
+body.admin #side-menu.nav > li > a:hover,
+body.admin #side-menu.nav > li > a:focus {
+    background: var(--as-sidebar-active) !important;
+    color: #f8fafc !important;
+}
+
+body.admin #side-menu.nav > li > a:hover i.menu-icon,
+body.admin #side-menu li.active > a i.menu-icon {
+    color: var(--as-sidebar-accent) !important;
+}
+
+body.admin #side-menu li.active > a {
+    background: var(--as-sidebar-active) !important;
+    color: #fff !important;
+    box-shadow: inset 3px 0 0 var(--as-sidebar-accent);
+}
+
+body.admin #side-menu li.active,
+body.admin #side-menu li .nav-second-level li {
+    background: transparent !important;
+}
+
+body.admin #side-menu li .nav-second-level li a {
+    color: #94a3b8 !important;
+    padding: 8px 14px 8px 48px !important;
+    font-size: 13px !important;
+}
+
+body.admin #side-menu li .nav-second-level li.active a {
+    background: rgba(59, 130, 246, 0.15) !important;
+    color: #93c5fd !important;
+    border-radius: var(--as-radius-sm) !important;
+    margin: 2px 0 !important;
+    padding: 6px 14px 6px 48px !important;
+    display: block !important;
+}
+
+body.admin #side-menu li .nav-second-level a:hover {
+    background: var(--as-sidebar-active) !important;
+    color: #e2e8f0 !important;
+}
+
+body.admin #side-menu li.dashboard_user {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15) !important;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+body.admin #side-menu li.dashboard_user a {
+    color: #f1f5f9 !important;
+    font-weight: 600 !important;
+}
+
+/* ── Content area ────────────────────────────────────────────── */
+
+body.admin #wrapper {
+    background: var(--as-bg) !important;
+    margin-left: 230px;
+    min-height: calc(100vh - 64px);
+}
+
+body.admin.hide-sidebar:not(.show-sidebar) #wrapper,
+body.admin.page-small #wrapper {
+    margin-left: 0;
+}
+
+body.admin .content {
+    padding: 24px 28px !important;
+}
+
+/* ── Panels / cards ──────────────────────────────────────────── */
+
+body.admin .panel_s {
+    border: none !important;
+    border-radius: var(--as-radius) !important;
+    box-shadow: var(--as-shadow-md) !important;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+body.admin .panel_s > .panel-heading,
+body.admin .panel_s > .panel-heading-bg {
+    background: var(--as-surface) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--as-border) !important;
+    padding: 16px 20px !important;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--as-text);
+}
+
+body.admin .panel_s .panel-body {
+    background: var(--as-surface) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 20px !important;
+}
+
+body.admin .panel_s > .panel-heading + .panel-body {
+    border-top: none !important;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+
+body.admin .btn {
+    font-family: var(--as-font) !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    border-radius: var(--as-radius-sm) !important;
+    text-transform: none !important;
+    padding: 8px 16px !important;
+    border: 1px solid transparent !important;
+    transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: var(--as-shadow);
+}
+
+body.admin .btn-primary {
+    background: var(--as-primary) !important;
+    border-color: var(--as-primary) !important;
+    color: #fff !important;
+}
+
+body.admin .btn-primary:hover,
+body.admin .btn-primary:focus,
+body.admin .btn-primary:active {
+    background: var(--as-primary-hover) !important;
+    border-color: var(--as-primary-hover) !important;
+    box-shadow: var(--as-shadow-md) !important;
+}
+
+body.admin .btn-success {
+    background: var(--as-success) !important;
+    border-color: var(--as-success) !important;
+}
+
+body.admin .btn-success:hover,
+body.admin .btn-success:focus {
+    background: var(--as-success-hover) !important;
+    border-color: var(--as-success-hover) !important;
+}
+
+body.admin .btn-default,
+body.admin .btn-secondary {
+    background: var(--as-surface) !important;
+    border-color: var(--as-border) !important;
+    color: var(--as-text) !important;
+}
+
+body.admin .btn-default:hover,
+body.admin .btn-secondary:hover {
+    background: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+}
+
+body.admin .btn-danger {
+    border-radius: var(--as-radius-sm) !important;
+}
+
+/* ── Forms ───────────────────────────────────────────────────── */
+
+body.admin .form-control,
+body.admin select.form-control,
+body.admin input[type="text"],
+body.admin input[type="email"],
+body.admin input[type="password"],
+body.admin input[type="number"],
+body.admin textarea.form-control,
+body.admin select {
+    font-family: var(--as-font) !important;
+    border: 1px solid var(--as-border) !important;
+    border-radius: var(--as-radius-sm) !important;
+    padding: 8px 12px !important;
+    height: auto !important;
+    min-height: 38px;
+    font-size: 13px !important;
+    color: var(--as-text);
+    box-shadow: none !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+body.admin .form-control:focus,
+body.admin select:focus,
+body.admin input[type="text"]:focus,
+body.admin textarea:focus {
+    border-color: var(--as-primary) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12) !important;
+    outline: none !important;
+}
+
+body.admin label {
+    font-weight: 500;
+    color: var(--as-text-muted);
+    font-size: 13px;
+}
+
+/* ── DataTables ──────────────────────────────────────────────── */
+
+body.admin table.dataTable {
+    border-collapse: separate !important;
+    border-spacing: 0;
+    font-size: 13px;
+}
+
+body.admin table.dataTable thead th,
+body.admin table.dataTable thead td {
+    background: #f8fafc !important;
+    border-bottom: 2px solid var(--as-border) !important;
+    color: var(--as-text-muted) !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    text-transform: none !important;
+    letter-spacing: 0.01em;
+    padding: 12px 14px !important;
+}
+
+body.admin table.dataTable tbody td {
+    padding: 11px 14px !important;
+    border-top: 1px solid #f1f5f9 !important;
+    vertical-align: middle !important;
+    color: var(--as-text);
+}
+
+body.admin table.dataTable tbody tr:hover td {
+    background: #f8fafc !important;
+}
+
+body.admin table.dataTable.stripe tbody tr.odd,
+body.admin table.dataTable.display tbody tr.odd {
+    background: #fafbfc !important;
+}
+
+body.admin .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+body.admin .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background: var(--as-primary) !important;
+    border-color: var(--as-primary) !important;
+    color: #fff !important;
+    border-radius: 6px !important;
+}
+
+body.admin .dataTables_wrapper .dataTables_paginate .paginate_button {
+    border-radius: 6px !important;
+    margin: 0 2px;
+}
+
+body.admin .dataTables_wrapper .dataTables_filter input,
+body.admin .dataTables_wrapper .dataTables_length select {
+    border-radius: var(--as-radius-sm) !important;
+    border: 1px solid var(--as-border) !important;
+    padding: 6px 10px !important;
+}
+
+body.admin div.dataTables_wrapper div.dataTables_info {
+    color: var(--as-text-muted);
+    font-size: 13px;
+}
+
+/* ── Alerts & labels ─────────────────────────────────────────── */
+
+body.admin .alert {
+    border-radius: var(--as-radius-sm) !important;
+    border: none !important;
+    box-shadow: var(--as-shadow);
+    font-size: 13px;
+}
+
+body.admin .alert-success {
+    background: #ecfdf5 !important;
+    color: #065f46 !important;
+}
+
+body.admin .alert-danger {
+    background: #fef2f2 !important;
+    color: #991b1b !important;
+}
+
+body.admin .alert-warning {
+    background: #fffbeb !important;
+    color: #92400e !important;
+}
+
+body.admin .alert-info {
+    background: #eff6ff !important;
+    color: #1e40af !important;
+}
+
+body.admin .label {
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    font-size: 11px !important;
+    padding: 4px 8px !important;
+}
+
+body.admin .badge {
+    background: var(--as-primary) !important;
+    font-family: var(--as-font) !important;
+}
+
+/* ── Modals ──────────────────────────────────────────────────── */
+
+body.admin .modal-content {
+    border: none !important;
+    border-radius: var(--as-radius) !important;
+    box-shadow: var(--as-shadow-lg) !important;
+}
+
+body.admin .modal-header {
+    border-bottom: 1px solid var(--as-border) !important;
+    padding: 18px 22px !important;
+}
+
+body.admin .modal-body {
+    padding: 22px !important;
+}
+
+body.admin .modal-footer {
+    border-top: 1px solid var(--as-border) !important;
+    padding: 14px 22px !important;
+}
+
+/* ── Tabs & nav pills ────────────────────────────────────────── */
+
+body.admin .nav-tabs {
+    border-bottom: 1px solid var(--as-border) !important;
+}
+
+body.admin .nav-tabs > li > a {
+    border-radius: var(--as-radius-sm) var(--as-radius-sm) 0 0 !important;
+    color: var(--as-text-muted) !important;
+    font-weight: 500;
+    border: none !important;
+    padding: 10px 16px !important;
+}
+
+body.admin .nav-tabs > li.active > a,
+body.admin .nav-tabs > li.active > a:hover {
+    color: var(--as-primary) !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid var(--as-primary) !important;
+}
+
+/* ── Setup menu ──────────────────────────────────────────────── */
+
+body.admin #setup-menu-wrapper {
+    background: var(--as-sidebar) !important;
+}
+
+body.admin #setup-menu > li > a {
+    color: var(--as-sidebar-text) !important;
+    text-transform: none !important;
+}
+
+/* ── Scrollbar (WebKit) ──────────────────────────────────────── */
+
+body.admin #side-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+body.admin #side-menu::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.3);
+    border-radius: 3px;
+}
+
+/* ── Responsive sidebar offset ───────────────────────────────── */
+
+@media (min-width: 769px) {
+    body.admin:not(.hide-sidebar):not(.page-small) #wrapper {
+        margin-left: 230px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body.admin .content {
+        padding: 16px !important;
+    }
+}
