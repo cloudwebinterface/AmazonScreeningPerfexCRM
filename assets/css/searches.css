@@ -52,6 +52,20 @@ body.pulling { overflow: hidden; }
     color: #627d98;
 }
 
+/* Hide Perfex loading-stripe leftovers on empty / finished tables */
+#searches-list_wrapper.table-loading,
+#searches-list_wrapper.dt-ready {
+    background-image: none !important;
+}
+
+#searches-list_wrapper.dt-ready.table-loading {
+    background: transparent !important;
+}
+
+#searches-list_wrapper .dataTables_empty {
+    background: transparent !important;
+}
+
 .submit-success {
     position: fixed;
     inset: 0;

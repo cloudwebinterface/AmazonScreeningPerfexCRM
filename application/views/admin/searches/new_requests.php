@@ -178,7 +178,14 @@ $(document).ready(function() {
             { "data": "sid", "visible": false }
         ],
         "initComplete": function(settings, json) {
-            $('#searches-list_wrapper').removeClass('table-loading');
+            $('#searches-list_wrapper').removeClass('table-loading').addClass('dt-ready');
+        },
+        "drawCallback": function() {
+            $('#searches-list_wrapper').removeClass('table-loading').addClass('dt-ready');
+        },
+        "preDrawCallback": function() {
+            // Keep loading stripe off once DataTables has taken over
+            $('#searches-list_wrapper').addClass('dt-ready');
         },
         "pageLength": 50,
         "lengthMenu": [[25, 50, 100, 250, 500, 1000, 1500, 2000], [25, 50, 100, 250, 500, 1000, 1500, 2000]],
